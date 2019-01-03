@@ -630,4 +630,14 @@ async function buildEverything() {
   }
 }
 
-buildEverything();
+// buildEverything();
+(async function() {
+  await asyncRimRaf('build');
+
+  // Run them serially for better console output
+  // and to avoid any potential race conditions.
+  // eslint-disable-next-line no-for-of-loops/no-for-of-loops
+  for (const bundle of Bundles.bundles) {
+    await createBundle(bundle, NODE_PROFILING);
+  }
+})();

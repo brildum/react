@@ -8,13 +8,14 @@
  */
 
 // Exports ReactDOM.createRoot
-export const enableUserTimingAPI = __DEV__;
+export const enableUserTimingAPI = __PROFILE__;
 
 // Experimental error-boundary API that can recover from errors within a single
 // render phase
 export const enableGetDerivedStateFromCatch = false;
 // Suspense
 export const enableSuspense = false;
+
 // Helps identify side effects in begin-phase lifecycle hooks and setState reducers:
 export const debugRenderPhaseSideEffects = false;
 
